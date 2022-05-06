@@ -7,13 +7,13 @@ on: # rebuild any PRs and main branch changes (mirror few typescript-action conv
       - 'releases/*'
 jobs:
   build-test:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       name: setup node
       with:
-        node-version: '13.x'
+        node-version: 16
 
     - name: "install"
       run: npm ci
